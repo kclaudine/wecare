@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content%}
+<style>
+    .card-img-top {
+        height: 20vh;
+    }
+
+
+  .cards {
+    box-shadow: 10px 10px 8px #888888;
+    -webkit-transition: all .9s ease;
+    -moz-transition: all .9s ease;
+    -o-transition: all .9s ease;
+    -ms-transition: all .9s ease;
+    
+  }
+</style>
+
+<div class="container" style="margin-top:1%">
+    <div class="content-section">
+        <div class="media">
+            <div class="container mb-5">
+                <div class="card mb-2 p-5" style="background-color: #f1f1ec;">
+                    <div class="row justify-content-center">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-3">
+                            <img class="rounded-circle account-img" src="{{ user.profile.profile.url }}" width="100%">
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <div class="media-body">
+                                <div class="account-heading">
+                                    <p><b>Name:</b> {{ user.username }}</p>
+                                    <p><b>Email:</b> {{ user.email }}</p>
+
+                                    <a class="btn btn-info btn-sm text-light mr-3" data-toggle="modal"
+                                        data-target=".bd-example-modal-md "><strong>Update Profile</strong></a>
+                                    <a class="btn btn-outline-warning btn-sm text-info mr-3" data-toggle="modal"
+                                        data-target=".2"><strong>Bookings</strong></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                {% if houses %}
+                <hr>
+                <h6><b>Therapist(s) Booked by me</b></h6>
+                <hr>
+                <div class="row">
+                    {% for pro in houses %}
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card mb-4 shadow-lg">
+                            <img alt="Card image cap" class="card-img-top img-fluid" src="{{pro.image.url}}"
+                                style="width: 30rem; height: 17rem;">
+
+                                <div class="card-body text-center">
+                                    <h6 class="card-title mb-0"
+                                        style="text-transform: uppercase;color: #45ac8b;font-weight: bold;font-size: 15px;">
+                                        Therapist Name:{{pro.name}}</h6>
+                                    <div class="card-text text-back-50"
+                                        style="text-transform: uppercase;color: rgb(150, 148, 148);font-weight: bold;font-size: 13px;">
+                                        Price: {{pro.price}}Rwf
+                                    </div>
+                                    
+                                    <div class="card-text text-back-50" 
+                                        style="text-transform: uppercase;color: rgb(150, 148, 148);font-weight: bold;font-size: 13px;"><i class="fas fa-map-marker-alt"></i>
+                                        {{pro.district}}
+            
+                                    </div>
+                                </div>
+                        </div>
+                   </div>
+
+
+
+                    {% endfor %}
+                </div>
+                {% else %}
+                <h5>You have no bookings yet</h5>
+                {% endif %}
+            </div>
+        </div>
+        <div class="modal fade bd-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-md ">
+                <div class="modal-content">
+                    <form action="" method="post" novalidate enctype="multipart/form-data" class="mr-4 mt-4 ml-4 mb-4">
+                        {% csrf_token%}
+                        {{ prof_form|crispy}}
+                        <button type="submit" class="btn text-light btn-info btn-sm"> Update Profile</button>
+                        <button type="button" class="btn btn-outline-dark btn-sm" data-dismiss="modal">Close
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade bd-example-modal-md 2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myLargeModalLabel">Bookings</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        {% if bookings %}
+                        <table class="table table-sm table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">First Name</th>
+                                    <th scope="col">Last Name</th>
+                                    <th scope="col">Username</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Phone</th>
+                                    <th scope="col">Therapist Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for pro in bookings %}
+                                <tr>
+                                    <td>{{pro.first_name}}</td>
+                                    <td>{{pro.last_name}}</td>
+                                    <td>{{pro.username}}</td>
+                                    <td>{{pro.email}}</td>
+                                    <td>{{pro.phone}}</td>
+                                    <td>{{pro.therapist_name}}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        {% else %}
+                        <p>No Booking yet</p>
+                        {% endif %}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    {% endblock %}

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.79.0">
+  <title>BRS-care</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/blog/">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader&family=Roboto+Slab&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <script src="https://kit.fontawesome.com/83d474e45f.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+
+<body style="font-family: 'Newsreader', serif;">
+  {% include 'navbar.html' %}
+    {% block content %}
+
+    {% endblock %}
+
+</body>
+
+<footer style="background-color: #1b1b1b; color: rgba(255, 255, 255, 0.501);" >
+  <div class="container" >
+       <div class="row" >
+            <div class="col-md-4 col-sm-4" data-aos="fade-right" data-aos-delay="900">
+                 <div class="footer-thumb">
+                      <h4 id="CONTACT" style="font-weight: 900;font-family: 'RocknRoll One', sans-serif;">Contact Info</h4> <hr style="background-color: rgba(255, 255, 255, 0.124);">
+                      <p>For more info don't hesitate to get in touch with us.</p>
+
+                      <div class="contact-info">
+                           <p><i class="fa fa-phone" style="color: #45ac8b"></i> +250-0788-304-545</p>
+                           <p><i class="fa fa-envelope-o" style="color: #45ac8b"></i> <a href="#" style="text-decoration: none;">carezone@gmail.com</a></p>
+                           <p><i class="fa fa-map-marker-alt" style="color: #45ac8b"></i> KN 190st 32 Kigali-Rwanda</p>
+                      </div>
+
+                 </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4" data-aos="fade-right" data-aos-delay="300">
+                 <div class="footer-thumb">
+                      <div class="opening-hours">
+                           <h4 style="font-weight: 900;font-family: 'RocknRoll One', sans-serif;"> Services</h4> <hr style="background-color: rgba(255, 255, 255, 0.124);">
+                              <p>Massage Therapy</p><br>
+                              <p>24/7 Services</p>
+                      </div>
+
+              </div>
+          </div>
+
+         </div>
+      </div>
+      <hr style="background-color: rgba(255, 255, 255, 0.124);">
+
+              </div>
+          </div>
+
+      </div>
+  </div>
+  <hr>
+
+  <div class="copyright-text">
+      <p style="text-align: center; margin-top: 2px; font-size: medium;">Copyright &copy; 2021 Care Zone (CZ)</p>
+  </div>
+
+  <div class="col-md-2 col-sm-2 text-align-center">
+      <div class="angle-up-btn">
+          <a href="#top" class="smoothScroll wow fadeInUp" data-wow-delay="2s"><i class="fa fa-angle-up"></i></a>
+      </div>
+  </div>
+  </div>
+
+
+  </div>
+</footer>
+<!-- <footer class=""> -->
+  <!-- Copyright -->
+  <!-- <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    © 2021 Copyright:
+    <a class="text-light" href="">Health-Zone</a>
+  </div> -->
+  <!-- Copyright -->
+<!-- </footer> -->
+<!-- Footer -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script>
+    AOS.init();
+  </script>
+  {% block scripts %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="{%static 'js/scripts.js'%}"> </script>
+  {% endblock %}
+</html>
